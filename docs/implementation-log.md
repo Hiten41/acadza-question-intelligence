@@ -38,10 +38,29 @@
 - Added a shared conservative route policy used by both result generation and browser action checks. An explicit automatic route can no longer bypass the derived safety conditions.
 - Final release validation regenerated the original 44 results unchanged (the SHA-256 of `results.json` remains `15BF7DE3476512C540F47CA943B3185F7AFAC62F86CD72B01245E942E8E31901`).
 - Release secret scan found no credential-format matches or student IDs in report records. `PROMPTS.md` retains the original prompt verbatim, including its generic `C:\Users\DELL\Downloads\...` example path.
-- GitHub Pages deployment is intentionally deferred; no live URL is claimed.
+- The Vercel production deployment completed successfully on 11 November 2026. Its production URL, configuration, and public HTTP verification are recorded in [deployment documentation](deployment.md).
 - Created and verified the public repository at `https://github.com/Hiten41/acadza-question-intelligence`; the initial push to `main` matched the locally verified release commit.
-- No deployment was started and no email was sent. The submission reply remains a draft with personal answers and the video link left for the user.
+- No email was sent. The submission reply remains a draft with personal answers and the video link left for the user.
+
+## 11 November 2026 — Vercel production deployment verification
+
+- Deployed the existing Vite application to the Vercel Hobby project `hiten41s-projects/acadza-question-intelligence`; Vercel reported the production deployment ready.
+- Verified production URL: `https://acadza-question-intelligence.vercel.app` (the canonical product spelling is `acadza-question-intelligence`). An unauthenticated request to the production alias returned HTTP 200.
+- Production deployment ID: `dpl_2n4fzg3jytmJqdiRGobVYeV1ubAA`.
+- Exercised the deployed application in Chromium. All 23 browser checks passed, covering dashboard statistics, queue search, report investigation, mathematical before/after comparison, safe staging and faculty restrictions, proactive findings, staged changes, audit history and JSON export, local persistence across refresh, demo reset, and mobile layout. No uncaught browser exceptions were observed.
+- Captured genuine screenshots from the deployed application in `screenshots/deployed/` and updated the README, deployment notes, demo walkthrough, and submission reply draft with the verified URL.
+- This successful deployment supersedes the preceding pre-deployment status: a public production URL now exists. The deployed application remains an offline demonstration, not a live LLM or Acadza production integration; decisions and audit records remain browser-local. No email was sent and no assignment was submitted.
+
+
+## 11 November 2026 — premium dark-mode redesign and production release
+
+- Applied the supplied dark UI visual direction across the existing dashboard, queue, investigation, review, staged-change, proactive-finding, audit, confirmation, and mobile navigation views. Kept the existing assignment data and review behavior; overview charts are calculated from the supplied results and cases.
+- Added the verified production favicon and captured nine fresh screenshots from the deployed build in `screenshots/deployed/`.
+- Production redeployment completed successfully at https://acadza-question-intelligence.vercel.app. Vercel deployment ID: `dpl_HnccR9bi8auX9DUpzFKap8wsRGEV` (Ready).
+- The final production walkthrough passed all 36 Chromium checks with no uncaught browser or console errors. It covered assignment totals, data charts, queue search, individual report investigation, the R001 mathematical comparison and confirmed local staging, persistence, the R034 faculty restriction, proactive findings, staged changes, audit JSON export, reset, and mobile/desktop behavior across seven viewport widths.
+- The release checks passed: `npm ci`, lint, all 27 tests, results generation, production build, and `npm audit` (0 vulnerabilities). `results.json` and `bonus_findings.json` hashes remained unchanged.
+- The app remains an offline assignment demonstration: it does not use a live LLM, connect to Acadza production, or write source corrections. Browser-local actions remain local to each user's browser. No email was sent and no assignment was submitted.
 
 ## Remaining demonstration limits
 
-The application uses a pre-reviewed offline assignment baseline. It has no live LLM calls, Acadza production connection, authentication, shared server, or production write endpoint. Review decisions and audit records persist only in the current browser profile. There is no public deployment or submitted email in this deliverable; review the included submission draft and distribution rights separately before using them.
+The application uses a pre-reviewed offline assignment baseline. It has no live LLM calls, Acadza production connection, authentication, shared server, or production write endpoint. Review decisions and audit records persist only in the current browser profile. A public Vercel deployment exists at the URL recorded above; it does not add server-side review capability. No email has been sent or assignment submitted. Review the included submission draft and distribution rights separately before using them.

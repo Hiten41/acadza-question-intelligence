@@ -3,7 +3,7 @@ import DOMPurify from "dompurify";
 import {
   Activity, ArrowDownToLine, ArrowRight, BookOpen, Check, CheckCircle2, ChevronDown, ChevronRight,
   CircleHelp, Clock3, FileCheck2, Filter, Flag, History, Inbox, LayoutDashboard, LockKeyhole,
-  MessageSquareText, Search, ShieldCheck, Sparkles, TriangleAlert, X, Zap,
+  Menu, MessageSquareText, PanelLeftClose, PanelLeftOpen, Search, ShieldCheck, Sparkles, TriangleAlert, X, Zap,
 } from "lucide-react";
 import questionRows from "../data/questions.json";
 import reportRows from "../data/reports.json";
@@ -51,6 +51,8 @@ const initialFilters = { verdict: "", repair: "", route: "", subject: "", chapte
 
 function App() {
   const [view, setView] = useState<View>("overview");
+  const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [saved, setSaved] = useState<PersistedState>(() => loadLocalState(localStorage));
   const [search, setSearch] = useState("");
   const [filters, setFilters] = useState(initialFilters);
@@ -107,7 +109,7 @@ function App() {
     setStorageWarning(!stored);
     if (!stored) showToast("The browser could not save this change. Export the audit before leaving.");
   };
-  const selectView = (next: View) => { setView(next); setMobileDetail(false); };
+  const selectView = (next: View) => { setView(next); setMobileDetail(false); setMobileMenuOpen(false); };
   const updateFilter = (key: keyof typeof initialFilters, value: string) => setFilters((current) => ({ ...current, [key]: value }));
   const clearFilters = () => { setFilters(initialFilters); setSearch(""); };
 
@@ -183,6 +185,12 @@ function App() {
   const facultyCases = baseCases.filter((item) => item.results.some((result) => result.route === "faculty_review")).length;
   const noContentCases = baseCases.filter((item) => item.results.every((result) => !result.edit)).length;
   const completedReviews = Object.values(saved.decisions).filter((entry) => ["staged", "approved", "rejected", "reviewed"].includes(entry.status)).length;
+  const verdictChartData = Object.entries(verdictNames).map(([key, label]) => ({ key, label, value: results.filter((result) => result.verdict === key).length, color: ({ defect: "#fb7185", no_error: "#60a5fa", display_issue: "#22d3ee", app_issue: "#a78bfa", language_mode: "#f472b6", already_fixed: "#34d399", not_actionable: "#77869f" } as Record<string, string>)[key] })).filter((item) => item.value > 0);
+  const routeChartData = Object.entries(routeNames).map(([key, label]) => ({ label, value: results.filter((result) => result.route === key).length, color: ({ auto_apply: "#34d399", faculty_review: "#fbbf24", no_change: "#818cf8" } as Record<string, string>)[key] }));
+  const rankedRepairs = Object.entries(repairs).map(([key, repair]) => ({ label: repair.label, value: results.filter((result) => result.repair === key).length, color: "#a78bfa" })).filter((item) => item.value > 0).sort((a, b) => b.value - a.value);
+  const repairChartData = [...rankedRepairs.slice(0, 6), ...(rankedRepairs.length > 6 ? [{ label: "Other repair types", value: rankedRepairs.slice(6).reduce((sum, item) => sum + item.value, 0), color: "#22d3ee" }] : [])];
+  const subjectChartData = [...new Set(baseCases.map((item) => item.question?.subject).filter((value): value is string => !!value))].map((label, index) => ({ label, value: baseCases.filter((item) => item.question?.subject === label).length, color: ["#60a5fa", "#a78bfa", "#22d3ee", "#34d399"][index % 4] })).sort((a, b) => b.value - a.value);
+  const proactiveCount = bonus.student_report_findings.length + bonus.independently_discovered_findings.length;
   const recentAudit = saved.audit.slice(0, 5);
   const filteredAudit = filterAudit(saved.audit, auditFilters);
   const auditQuestions = new Map(questions.map((item) => [item._id, item]));
@@ -193,40 +201,42 @@ function App() {
   const eligibilityForAction = !proposal?.edit || !proposal.repair ? { ok: true, reasons: [], before: undefined, after: undefined } : proposal.route === "auto_apply" ? stageCheck : approveCheck;
 
   const renderNav = () => sections.map(({ id, label, icon: Icon }) => (
-    <button key={id} className={`nav-item ${view === id ? "active" : ""}`} onClick={() => selectView(id)} aria-current={view === id ? "page" : undefined}>
+    <button key={id} className={`nav-item ${view === id ? "active" : ""}`} onClick={() => selectView(id)} aria-label={label} title={label} aria-current={view === id ? "page" : undefined}>
       <Icon size={18} /><span>{label}</span>{id === "queue" && <span className="nav-count">{baseCases.length}</span>}{id === "audit" && <span className="nav-count muted-count">{saved.audit.length}</span>}
     </button>
   ));
 
-  return <div className="shell redesign-shell">
+  return <div className={`shell redesign-shell ${sidebarCollapsed ? "nav-collapsed" : ""} ${mobileMenuOpen ? "mobile-menu-visible" : ""}`}>
+    {mobileMenuOpen && <button className="drawer-scrim" aria-label="Close navigation" onClick={() => setMobileMenuOpen(false)} />}
     <aside className="sidebar">
-      <div className="brand"><div className="brand-mark"><Sparkles size={20} strokeWidth={2.4} /></div><div><span className="brand-name">acadza</span><span className="brand-product">QUESTION INTELLIGENCE</span></div></div>
+      <div className="brand"><div className="brand-mark"><Sparkles size={20} strokeWidth={2.4} /></div><div><span className="brand-name">acadza</span><span className="brand-product">QUESTION INTELLIGENCE</span></div><button className="icon-button sidebar-toggle" onClick={() => setSidebarCollapsed((value) => !value)} aria-label={sidebarCollapsed ? "Expand sidebar" : "Collapse sidebar"} title={sidebarCollapsed ? "Expand sidebar" : "Collapse sidebar"}>{sidebarCollapsed ? <PanelLeftOpen size={17} /> : <PanelLeftClose size={17} />}</button></div>
       <div className="workspace-label">FACULTY WORKSPACE</div><nav className="primary-nav" aria-label="Main navigation">{renderNav()}</nav>
       <div className="side-spacer" />
       <div className="trust-card"><div className="trust-icon"><ShieldCheck size={18} /></div><div><strong>Offline assignment data</strong><span>Pre-reviewed · browser-local</span></div><span className="online-dot" /></div>
       <div className="profile"><div className="avatar">FR</div><div className="profile-copy"><strong>Faculty reviewer</strong><span>Local review session</span></div></div>
     </aside>
     <main className="main">
-      <header className="topbar"><div className="breadcrumb"><span>Acadza</span><ChevronRight size={14} /><strong>{sections.find((item) => item.id === view)?.label}</strong></div><div className="topbar-right"><span className="date-stamp">43 QUESTIONS · 44 REPORTS</span><span className="system-status"><span className="online-dot" /> REVIEWED OFFLINE BASELINE <span className="tooltip-mark" title="These are pre-reviewed assignment decisions. No live LLM inference is performed in this demo." aria-label="These are pre-reviewed assignment decisions. No live LLM inference is performed in this demo.">i</span></span></div></header>
-      <nav className="mobile-nav" aria-label="Mobile navigation">{renderNav()}</nav>
+      <header className="topbar"><div className="topbar-start"><button className="icon-button mobile-menu-trigger" onClick={() => setMobileMenuOpen(true)} aria-label="Open navigation"><Menu size={19} /></button><div className="breadcrumb"><span>Acadza</span><ChevronRight size={14} /><strong>{sections.find((item) => item.id === view)?.label}</strong></div></div><button className="global-search" onClick={() => { selectView("queue"); window.setTimeout(() => searchRef.current?.focus(), 0); }} aria-label="Search reports and questions"><Search size={16} /><span>Search reports, questions…</span><kbd>Ctrl K</kbd></button><div className="topbar-right"><span className="date-stamp">43 QUESTIONS · 44 REPORTS</span><span className="system-status"><span className="online-dot" /> REVIEWED OFFLINE BASELINE <span className="tooltip-mark" title="These are pre-reviewed assignment decisions. No live LLM inference is performed in this demo." aria-label="These are pre-reviewed assignment decisions. No live LLM inference is performed in this demo.">i</span></span></div></header>
 
       {view === "overview" && <section className="content-page overview-page">
-        <div className="page-heading"><div><div className="eyebrow"><span className="eyebrow-line" /> FACULTY OPERATIONS</div><h1>Overview</h1><p className="page-subtitle">A clear view of the supplied assignment records and your local review activity.</p></div><span className="baseline-badge">REVIEWED OFFLINE BASELINE</span></div>
+        <div className="page-heading overview-hero"><div><div className="eyebrow"><span className="eyebrow-line" /> FACULTY OPERATIONS / ASSIGNMENT SNAPSHOT</div><h1>Question Intelligence</h1><p className="page-subtitle">Monitor, investigate and resolve question-quality issues.</p></div><div className="hero-baseline"><span className="hero-baseline-icon"><LockKeyhole size={17} /></span><span><strong>Offline demonstration</strong><small>Pre-reviewed assignment results · no live LLM or Acadza integration</small></span></div></div>
         <div className="metric-grid overview-metrics">
-          <Metric label="Questions" value={questions.length} detail="Source question records" icon={<BookOpen size={18} />} />
-          <Metric label="Student reports" value={reports.length} detail={`${reports.length - baseCases.length} duplicate reports grouped`} icon={<MessageSquareText size={18} />} />
-          <Metric label="Question cases" value={baseCases.length} detail="Unique affected question IDs" icon={<Inbox size={18} />} />
+          <Metric label="Questions" value={questions.length} detail="Source question records" icon={<BookOpen size={18} />} tone="blue" />
+          <Metric label="Student reports" value={reports.length} detail={`${reports.length - baseCases.length} duplicate reports grouped`} icon={<MessageSquareText size={18} />} tone="violet" />
+          <Metric label="Question cases" value={baseCases.length} detail="Unique affected question IDs" icon={<Inbox size={18} />} tone="cyan" />
           <Metric label="Reported defects" value={groupedDefects} detail="Cases with a defect verdict" icon={<Flag size={18} />} tone="coral" />
-          <Metric label="Safe correction candidates" value={safeCandidates} detail="Pass offline staging checks" icon={<Zap size={18} />} tone="lime" />
+          <Metric label="Safe correction candidates" value={safeCandidates} detail="Pass offline staging checks" icon={<Zap size={18} />} tone="emerald" />
           <Metric label="Faculty review cases" value={facultyCases} detail="Require a human gate" icon={<CircleHelp size={18} />} tone="amber" />
-          <Metric label="No content edit proposed" value={noContentCases} detail="Delivery, answer, or request issues" icon={<ShieldCheck size={18} />} />
-          <Metric label="Completed local reviews" value={completedReviews} detail="Stored in this browser only" icon={<CheckCircle2 size={18} />} tone="lime" />
+          <Metric label="No content edit proposed" value={noContentCases} detail="Delivery, answer, or request issues" icon={<ShieldCheck size={18} />} tone="indigo" />
+          <Metric label="Completed local reviews" value={completedReviews} detail="Stored in this browser only" icon={<CheckCircle2 size={18} />} tone="teal" />
         </div>
+        <div className="dashboard-charts"><ChartCard title="Verdict distribution" eyebrow="44 REPORT-LEVEL RESULTS" className="chart-verdict"><DonutChart data={verdictChartData} total={results.length} /></ChartCard><ChartCard title="Review route" eyebrow="SAFE ROUTING BREAKDOWN"><BarChart data={routeChartData} /></ChartCard><ChartCard title="Repair categories" eyebrow="13 TAXONOMY TYPES USED"><BarChart data={repairChartData} /></ChartCard><ChartCard title="Subject-wise issue distribution" eyebrow="39 GROUPED CASES"><BarChart data={subjectChartData} /></ChartCard></div>
         <div className="overview-columns"><section className="panel priority-panel"><div className="panel-heading"><div><span className="eyebrow">NEXT FOR REVIEW</span><h2>Highest-priority open cases</h2><p>Priority combines defect urgency, route, offline score uncertainty and repeated reports.</p></div><button className="button button-quiet" onClick={() => selectView("queue")}>Open queue <ArrowRight size={15} /></button></div>
           {baseCases.filter((item) => !saved.decisions[item.questionId] || saved.decisions[item.questionId].status === "edited").sort((a, b) => b.priority - a.priority).slice(0, 5).map((item) => <button key={item.questionId} className="overview-case" onClick={() => { setSelectedId(item.questionId); selectView("queue"); }}><span className={`priority-score ${item.priority >= 60 ? "priority-high" : item.priority >= 35 ? "priority-medium" : "priority-low"}`}>{item.priority}</span><span className="overview-case-main"><strong>{item.question?.qid ?? item.questionId}</strong><span>{item.question?.subject} · {item.question?.chapter}</span></span><span className="case-route-text">{routeNames[item.route]}</span><ChevronRight size={16} /></button>)}
         </section><section className="panel recent-panel"><div className="panel-heading"><div><span className="eyebrow">LOCAL ACTIVITY</span><h2>Recent review actions</h2><p>Only real actions recorded in this browser are listed.</p></div><button className="icon-button" onClick={() => selectView("audit")} aria-label="Open audit history"><ArrowRight size={17} /></button></div>
           {recentAudit.length ? recentAudit.map((entry) => <AuditCompact key={entry.id} entry={entry} />) : <div className="empty-state"><History size={24} /><strong>No local actions yet</strong><span>Review a case to create a browser-local audit entry.</span></div>}
         </section></div>
+        <div className="overview-insights"><section className="panel dashboard-summary-card"><div className="panel-heading"><div><span className="eyebrow">REVIEW COVERAGE</span><h2>{completedReviews} of {baseCases.length} cases reviewed</h2><p>Local decisions stored in this browser profile.</p></div><span className="coverage-value">{Math.round((completedReviews / Math.max(baseCases.length, 1)) * 100)}%</span></div><div className="coverage-track"><span style={{ width: `${Math.min(100, (completedReviews / Math.max(baseCases.length, 1)) * 100)}%` }} /></div><div className="coverage-foot"><span>{baseCases.length - completedReviews} cases remain</span><span>Browser local only</span></div></section><button className="panel proactive-summary-card" onClick={() => selectView("proactive")}><span className="summary-icon"><Sparkles size={18} /></span><span className="summary-copy"><small>SEPARATE ASSIGNMENT REVIEW</small><strong>Proactive findings</strong><span>{proactiveCount} review notes kept outside the report adjudications.</span></span><ArrowRight size={17} /></button></div>
         <p className="offline-note"><LockKeyhole size={15} /> This demonstration uses pre-reviewed assignment decisions. No live LLM inference or Acadza production connection is active.</p>
       </section>}
 
@@ -311,8 +321,25 @@ function App() {
   </div>;
 }
 
+type ChartDatum = { label: string; value: number; color: string };
+
+function ChartCard({ title, eyebrow, className = "", children }: { title: string; eyebrow: string; className?: string; children: React.ReactNode }) {
+  return <section className={`panel chart-card ${className}`}><div className="chart-heading"><div><span className="eyebrow">{eyebrow}</span><h2>{title}</h2></div><span className="chart-menu-mark" aria-hidden="true">···</span></div>{children}</section>;
+}
+
+function DonutChart({ data, total }: { data: Array<ChartDatum & { key: string }>; total: number }) {
+  const circumference = 2 * Math.PI * 44;
+  const segments = data.map((item, index) => ({ ...item, length: total ? circumference * item.value / total : 0, offset: total ? circumference * data.slice(0, index).reduce((sum, part) => sum + part.value, 0) / total : 0 }));
+  return <div className="donut-layout"><div className="donut-visual"><svg viewBox="0 0 120 120" role="img" aria-label={`Verdict distribution across ${total} report results`}><circle cx="60" cy="60" r="44" fill="none" stroke="var(--chart-track)" strokeWidth="11" />{segments.map((item) => <circle key={item.key} cx="60" cy="60" r="44" fill="none" stroke={item.color} strokeWidth="11" strokeDasharray={`${item.length} ${circumference - item.length}`} strokeDashoffset={-item.offset} transform="rotate(-90 60 60)" />)}</svg><div className="donut-center"><strong>{total}</strong><span>reports</span></div></div><div className="chart-legend">{data.map((item) => <div className="legend-row" key={item.key}><span style={{ background: item.color }} /><span>{item.label}</span><strong>{item.value}</strong></div>)}</div></div>;
+}
+
+function BarChart({ data }: { data: ChartDatum[] }) {
+  const max = Math.max(1, ...data.map((item) => item.value));
+  return <div className="bar-chart" role="img" aria-label={data.map((item) => `${item.label}: ${item.value}`).join(", ")}>{data.map((item) => <div className="bar-row" key={item.label}><span className="bar-label" title={item.label}>{item.label}</span><span className="bar-track"><span style={{ width: `${(item.value / max) * 100}%`, background: item.color }} /></span><strong>{item.value}</strong></div>)}</div>;
+}
+
 function Metric({ label, value, detail, icon, tone = "blue" }: { label: string; value: number; detail: string; icon: React.ReactNode; tone?: string }) {
-  return <article className="metric-card"><div className="metric-label">{label}<span className={`metric-icon ${tone}`}>{icon}</span></div><div className="metric-bottom"><strong>{value}</strong></div><div className="metric-foot">{detail}</div></article>;
+  return <article className={`metric-card tone-${tone}`}><div className="metric-label">{label}<span className={`metric-icon ${tone}`}>{icon}</span></div><div className="metric-bottom"><strong>{value}</strong></div><div className="metric-foot">{detail}</div><span className="metric-accent" aria-hidden="true" /></article>;
 }
 
 function FilterSelect({ label, value, onChange, options }: { label: string; value: string; onChange: (value: string) => void; options: Array<[string, string]> }) {

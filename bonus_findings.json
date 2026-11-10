@@ -1,0 +1,384 @@
+{
+  "student_report_findings": [
+    {
+      "questionId": "5fc60508028950133eac8963",
+      "reportIds": [
+        "R024"
+      ],
+      "field": "question",
+      "issueCategory": "answer_form",
+      "originalContent": "<h3><span style=\"color:#000000\">A body of mass 2 kg is kept by pressing to a vertical wall by a force of 100 N. The friction between wall and body is 0.3. Then the frictional force is equal to</span></h3>\n",
+      "evidence": "The integer response is a force, but the stem does not state the expected unit. The solution explicitly works in newtons; the additive unit cue preserves the question's meaning.",
+      "explanation": "The integer response is a force, but the stem does not state the expected unit. The solution explicitly works in newtons; the additive unit cue preserves the question's meaning.",
+      "proposedMinimalCorrection": {
+        "field": "question",
+        "find": "frictional force is equal to",
+        "replace": "frictional force is equal to (in N)"
+      },
+      "confidence": 0.96,
+      "requiredHumanAction": "Review the staged correction before production use; this offline demo never publishes changes."
+    },
+    {
+      "questionId": "60f742f6660d187cc13a8078",
+      "reportIds": [
+        "R008",
+        "R007"
+      ],
+      "field": "question",
+      "issueCategory": "stem_data",
+      "originalContent": "<h3><span style=\"color:#000000\">A resistance of 40 ohm and an inductance are connected in series in a 50 cycles/second ac circuit. The impedance of this combination is very nearly</h3><h3>(A)<span style=\"color:#000000\"> <span style=\"color:#000000\">30 ohm<br />(B)<span style=\"color:#000000\"> <span style=\"color:#000000\">40 ohm<br />(C)<span style=\"color:#000000\"> <span style=\"color:#000000\">50 ohm<br />(D)</span></span></span><span style=\"color:#000000\"> </span></span></span><span style=\"color:#000000\">60 ohm</span></span></span></h3>",
+      "evidence": "The stem omits L, but its stored solution explicitly substitutes 95.5 mH and derives the keyed 50 Ω. That is strong evidence of the missing value; a faculty member should confirm it against the source. This duplicate report points to the same missing inductance as R008. The stored solution supplies 95.5 mH and the result is 50 Ω; source confirmation is still required.",
+      "explanation": "The stem omits L, but its stored solution explicitly substitutes 95.5 mH and derives the keyed 50 Ω. That is strong evidence of the missing value; a faculty member should confirm it against the source. This duplicate report points to the same missing inductance as R008. The stored solution supplies 95.5 mH and the result is 50 Ω; source confirmation is still required.",
+      "proposedMinimalCorrection": {
+        "field": "question",
+        "find": "A resistance of 40 ohm and an inductance are connected",
+        "replace": "A resistance of 40 ohm and an inductance of 95.5 mH are connected"
+      },
+      "confidence": 0.98,
+      "requiredHumanAction": "Faculty approval is required before any change is published."
+    },
+    {
+      "questionId": "60f744b3f1b9bc7cc7b4a949",
+      "reportIds": [
+        "R002",
+        "R003",
+        "R001"
+      ],
+      "field": "answer",
+      "issueCategory": "answer_key",
+      "originalContent": "C",
+      "evidence": "The phasor sum is √(40²+(60−30)²)=50 V, option A. The solution and two duplicate reports independently point to A; the key says C. The phasor sum √(40²+(60−30)²)=50 V selects option A. Both the solution and duplicate reports agree; the answer field incorrectly says C. The supply voltage is √(40²+(60−30)²)=50 V, which is option A. The solution ends at 50 V; only the key C is inconsistent.",
+      "explanation": "The phasor sum is √(40²+(60−30)²)=50 V, option A. The solution and two duplicate reports independently point to A; the key says C. The phasor sum √(40²+(60−30)²)=50 V selects option A. Both the solution and duplicate reports agree; the answer field incorrectly says C. The supply voltage is √(40²+(60−30)²)=50 V, which is option A. The solution ends at 50 V; only the key C is inconsistent.",
+      "proposedMinimalCorrection": {
+        "field": "answer",
+        "find": "C",
+        "replace": "A"
+      },
+      "confidence": 0.99,
+      "requiredHumanAction": "Review the staged correction before production use; this offline demo never publishes changes."
+    },
+    {
+      "questionId": "612151a6a34397610a9a2e58",
+      "reportIds": [
+        "R018",
+        "R019"
+      ],
+      "field": "solution",
+      "issueCategory": "solution_fix",
+      "originalContent": "<h3><math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mstyle displaystyle=\"true\"><mrow><mo>&#x0003D;</mo><mn>5.469</mn><mi>&#x000D7;</mi><msup><mn>10</mn><mrow><mo>&#x02212;</mo><mn>10</mn></mrow></msup><mi>m</mi><mo>&#x0003D;</mo><mn>5.47</mn><mi>\\AA</mi></mrow></mstyle></math> <math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mstyle displaystyle=\"true\"><mrow><mi>&#x003BB;</mi><mo>&#x0003D;</mo><mfrac><mrow><mi>h</mi></mrow><mrow><mo stretchy=\"false\">&#x0007C;</mo><mi>p</mi><mo stretchy=\"false\">&#x0007C;</mo></mrow></mfrac><mo>&#x0003D;</mo><mfrac><mrow><mi>h</mi></mrow><mrow><mo stretchy=\"false\">&#x0007C;</mo><mi>I</mi><mo stretchy=\"false\">&#x0007C;</mo></mrow></mfrac></mrow></mstyle></math> <math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mstyle displaystyle=\"true\"><mrow><mo>&#x0003D;</mo><mn>2.65</mn><mi>&#x000D7;</mi><msup><mn>10</mn><mrow><mo>&#x02212;</mo><mn>18</mn></mrow></msup><mi>J</mi></mrow></mstyle></math> <math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mstyle displaystyle=\"true\"><mrow><mo>&#x0003D;</mo><mn>16.8</mn><mi>e</mi><mi>V</mi></mrow></mstyle></math></h3>",
+      "evidence": "The stem gives λ=0.30 nm, but the current solution begins with 5.469×10⁻¹⁰ m and an unrelated momentum expression. Recomputing K=h²/(2mλ²) gives 16.8 eV (option B); the solution should be replaced. This duplicate report flags the same inconsistency: 5.47 Å does not match the stem's 0.30 nm. An independent calculation gives 16.8 eV, so the key is right but the solution should be replaced.",
+      "explanation": "The stem gives λ=0.30 nm, but the current solution begins with 5.469×10⁻¹⁰ m and an unrelated momentum expression. Recomputing K=h²/(2mλ²) gives 16.8 eV (option B); the solution should be replaced. This duplicate report flags the same inconsistency: 5.47 Å does not match the stem's 0.30 nm. An independent calculation gives 16.8 eV, so the key is right but the solution should be replaced.",
+      "proposedMinimalCorrection": {
+        "field": "solution",
+        "find": "<h3><math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mstyle displaystyle=\"true\"><mrow><mo>&#x0003D;</mo><mn>5.469</mn><mi>&#x000D7;</mi><msup><mn>10</mn><mrow><mo>&#x02212;</mo><mn>10</mn></mrow></msup><mi>m</mi><mo>&#x0003D;</mo><mn>5.47</mn><mi>\\AA</mi></mrow></mstyle></math> <math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mstyle displaystyle=\"true\"><mrow><mi>&#x003BB;</mi><mo>&#x0003D;</mo><mfrac><mrow><mi>h</mi></mrow><mrow><mo stretchy=\"false\">&#x0007C;</mo><mi>p</mi><mo stretchy=\"false\">&#x0007C;</mo></mrow></mfrac><mo>&#x0003D;</mo><mfrac><mrow><mi>h</mi></mrow><mrow><mo stretchy=\"false\">&#x0007C;</mo><mi>I</mi><mo stretchy=\"false\">&#x0007C;</mo></mrow></mfrac></mrow></mstyle></math> <math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mstyle displaystyle=\"true\"><mrow><mo>&#x0003D;</mo><mn>2.65</mn><mi>&#x000D7;</mi><msup><mn>10</mn><mrow><mo>&#x02212;</mo><mn>18</mn></mrow></msup><mi>J</mi></mrow></mstyle></math> <math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mstyle displaystyle=\"true\"><mrow><mo>&#x0003D;</mo><mn>16.8</mn><mi>e</mi><mi>V</mi></mrow></mstyle></math></h3>",
+        "replace": "<h3>The wavelength is λ = 0.30 nm = 3.0 × 10⁻¹⁰ m. For an electron, K = p²/(2m) = h²/(2mλ²). Substituting h = 6.626 × 10⁻³⁴ J·s, m = 9.11 × 10⁻³¹ kg and λ = 3.0 × 10⁻¹⁰ m gives K ≈ 2.68 × 10⁻¹⁸ J ≈ 16.8 eV. The answer is option B.</h3>"
+      },
+      "confidence": 0.99,
+      "requiredHumanAction": "Faculty approval is required before any change is published."
+    },
+    {
+      "questionId": "617fa18efd53ff1629ed890f",
+      "reportIds": [
+        "R013"
+      ],
+      "field": "question",
+      "issueCategory": "exam_reference",
+      "originalContent": "<h3><span style=\"color:#000000\">(NEET 2019) Which of the following is the green expanded part of<span style=\"color:#000000\">leaf with vein and veinlets?</h3><h3>(A) Petiole<br />(B) Node</span><br />(C) Stipule<br />(D) Lamina</span></span></span></h3>",
+      "evidence": "The stem begins with an exam-source tag. Removing that attribution follows the exam_reference repair scope and leaves the question itself unchanged.",
+      "explanation": "The stem begins with an exam-source tag. Removing that attribution follows the exam_reference repair scope and leaves the question itself unchanged.",
+      "proposedMinimalCorrection": {
+        "field": "question",
+        "find": "(NEET 2019) ",
+        "replace": ""
+      },
+      "confidence": 0.97,
+      "requiredHumanAction": "Review the staged correction before production use; this offline demo never publishes changes."
+    },
+    {
+      "questionId": "61dffbec08489156b684bd22",
+      "reportIds": [
+        "R012"
+      ],
+      "field": "question",
+      "issueCategory": "spelling",
+      "originalContent": "<h3><span style=\"color:#000000\">Which tissue is present in the lining of small intestine?</h3><h3>(A)<span style=\"color:#000000\"> <span style=\"color:#000000\">Epithellial tisue<br />(B)<span style=\"color:#000000\"> <span style=\"color:#000000\">Connective tissue<br />(C)<span style=\"color:#000000\"> <span style=\"color:#000000\">Nervous tissue<br />(D)</span></span></span><span style=\"color:#000000\"> </span></span></span><span style=\"color:#000000\">Muscular tissue</span></span></span></h3>",
+      "evidence": "Option A contains two spelling errors. The repair changes the wording only; its meaning and keyed answer stay the same.",
+      "explanation": "Option A contains two spelling errors. The repair changes the wording only; its meaning and keyed answer stay the same.",
+      "proposedMinimalCorrection": {
+        "field": "question",
+        "find": "Epithellial tisue",
+        "replace": "Epithelial tissue"
+      },
+      "confidence": 0.99,
+      "requiredHumanAction": "Review the staged correction before production use; this offline demo never publishes changes."
+    },
+    {
+      "questionId": "61ee6c9d90a1a968a168686b",
+      "reportIds": [
+        "R022"
+      ],
+      "field": "question",
+      "issueCategory": "spelling",
+      "originalContent": "<h3><span style=\"color:#000000\">Aggregates of lymphoid tissue present in the distal portion of the small intestine are known as</h3><h3>(A)<span style=\"color:#000000\"> <span style=\"color:#000000\">Villi<br />(B)<span style=\"color:#000000\"> <span style=\"color:#000000\">Peyer&rsquo;s patches<br />(C)<span style=\"color:#000000\"> <span style=\"color:#000000\">Rugae<br />(D)</span></span></span><span style=\"color:#000000\"> </span></span></span><span style=\"color:#000000\">Choroid plexux</span></span></span></h3>",
+      "evidence": "Option D misspells “plexus” as “plexux”. The correction is a spelling-only change and does not alter the answer.",
+      "explanation": "Option D misspells “plexus” as “plexux”. The correction is a spelling-only change and does not alter the answer.",
+      "proposedMinimalCorrection": {
+        "field": "question",
+        "find": "plexux",
+        "replace": "plexus"
+      },
+      "confidence": 0.99,
+      "requiredHumanAction": "Review the staged correction before production use; this offline demo never publishes changes."
+    },
+    {
+      "questionId": "620e23cecc50543bc7db9186",
+      "reportIds": [
+        "R026"
+      ],
+      "field": "question",
+      "issueCategory": "syllabus",
+      "originalContent": "<h3><span style=\"color:#000000\">A biologist is trying to infer how five closely related species of snakes are related to one another. She noticed that some of the snakes have forked tongues and others do not. Which of the following would help her to distinguish their ancestral state?</h3><h3>(A)<span style=\"color:#000000\"> <span style=\"color:#000000\">She looks among snake fossils for evidences that being forked is a characteristic of the ancestor of this group, but determines no such fossils exists<br />(B)<span style=\"color:#000000\"> <span style=\"color:#000000\">She locates a specimen of a more distantly related snake to see if it has a forked tongue<br />(C)<span style=\"color:#000000\"> </span><span style=\"color:#000000\">She looks at a representative mammal species to see if it has a forked tongue</span></span></span><br />(D)</span></span></span><span style=\"color:#000000\"> </span></span></span><span style=\"color:#000000\">She flips a coin</span></span></span></h3>",
+      "evidence": "Syllabus alignment depends on the current NEET syllabus and cannot be confirmed from the question record alone. The request is actionable for a faculty curriculum check; the item stays live meanwhile.",
+      "explanation": "Syllabus alignment depends on the current NEET syllabus and cannot be confirmed from the question record alone. The request is actionable for a faculty curriculum check; the item stays live meanwhile.",
+      "proposedMinimalCorrection": null,
+      "confidence": 0.78,
+      "requiredHumanAction": "Faculty approval is required before any change is published."
+    },
+    {
+      "questionId": "622df25ab70e4b50e44ff837",
+      "reportIds": [
+        "R025"
+      ],
+      "field": "question",
+      "issueCategory": "diagram",
+      "originalContent": "<h3>A glass tube of uniform internal radius (r) has a valve separating the two identical ends. Initially, the valve is in a tightly closed position. End 1 has a hemispherial soap bubble of radius <math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mstyle displaystyle=\"true\"><mrow><mi>r</mi></mrow></mstyle></math>. End 2 has sub-hemispherical soap bubble as shown in figure.<br/><br/>Just after opening the valve.<br/>(A) air from end 1 flows towards end 2 . No change in the volume of the soap bubbles<br/>(B) air from end 1 flows towards end 2. Volume of the soap bubble at end 1 decreases<br/>(C) no change occurs<br/>(D) air from end 2 flows towards end 1 . Volume of the soap bubble at end 1 increases</h3>",
+      "evidence": "The stem says the second bubble is “as shown in figure”, but quesImages is empty. The missing figure is essential context; a human must supply and verify the correct diagram.",
+      "explanation": "The stem says the second bubble is “as shown in figure”, but quesImages is empty. The missing figure is essential context; a human must supply and verify the correct diagram.",
+      "proposedMinimalCorrection": null,
+      "confidence": 0.99,
+      "requiredHumanAction": "Faculty approval is required before any change is published."
+    },
+    {
+      "questionId": "6263d75bdd44e265ef926d97",
+      "reportIds": [
+        "R016"
+      ],
+      "field": "solution",
+      "issueCategory": "solution_fix",
+      "originalContent": "<h3><span style=\"color:#000000\">Let a be the size of each side of the cube. Then,<br />\r\n\r\n <span style=\"color:#000000\">800 &times; g = (2) &times; (a<span style=\"color:#000000\"><sup>2</sup><span style=\"color:#000000\">) &times; 1 &times; g</span></span><br />\r\n\r\n <span style=\"color:#000000\">a = 40 cm</span></span></span></h3>",
+      "evidence": "The lost displaced volume is a²×2 cm and balances the 800 g load in water, giving a²=400 cm² and a=20 cm. The stored solution's final 40 cm is an arithmetic error; the answer key 20 is correct.",
+      "explanation": "The lost displaced volume is a²×2 cm and balances the 800 g load in water, giving a²=400 cm² and a=20 cm. The stored solution's final 40 cm is an arithmetic error; the answer key 20 is correct.",
+      "proposedMinimalCorrection": {
+        "field": "solution",
+        "find": "<h3><span style=\"color:#000000\">Let a be the size of each side of the cube. Then,<br />\r\n\r\n <span style=\"color:#000000\">800 &times; g = (2) &times; (a<span style=\"color:#000000\"><sup>2</sup><span style=\"color:#000000\">) &times; 1 &times; g</span></span><br />\r\n\r\n <span style=\"color:#000000\">a = 40 cm</span></span></span></h3>",
+        "replace": "<h3>With the 800 g mass on the cube, the added load displaces 800 cm³ of water. Removing the mass raises the waterline by 2 cm, so the lost displaced volume is 2a² = 800 cm³. Thus a² = 400 cm² and the side is a = 20 cm.</h3>"
+      },
+      "confidence": 0.98,
+      "requiredHumanAction": "Faculty approval is required before any change is published."
+    },
+    {
+      "questionId": "63765a28f1d8416ae0408d89",
+      "reportIds": [
+        "R014"
+      ],
+      "field": "question",
+      "issueCategory": "markup_leak",
+      "originalContent": "<h3>The half life period of a radioactive substance is 60 days. The time taken for \\frac{7}{8} th of its original mass to disintegrate will be :<br/>(A) 120 days<br/>(B) 130 days<br/>(C) 180 days<br/>(D) 20 days</h3>",
+      "evidence": "The stem contains literal LaTeX command text instead of rendered fraction markup. Replacing that token with readable 7/8 preserves the value and meaning.",
+      "explanation": "The stem contains literal LaTeX command text instead of rendered fraction markup. Replacing that token with readable 7/8 preserves the value and meaning.",
+      "proposedMinimalCorrection": {
+        "field": "question",
+        "find": "\\frac{7}{8}",
+        "replace": "7/8"
+      },
+      "confidence": 0.99,
+      "requiredHumanAction": "Review the staged correction before production use; this offline demo never publishes changes."
+    },
+    {
+      "questionId": "63c7cce12981ed154ee92c94",
+      "reportIds": [
+        "R042"
+      ],
+      "field": "chapter",
+      "issueCategory": "wrong_chapter",
+      "originalContent": "Geometrical optics and optical instruments",
+      "evidence": "The stem asks about displacement current in a parallel-plate capacitor, while the stored chapter is geometrical optics. This is a clear subject taxonomy mismatch; changing taxonomy requires faculty approval.",
+      "explanation": "The stem asks about displacement current in a parallel-plate capacitor, while the stored chapter is geometrical optics. This is a clear subject taxonomy mismatch; changing taxonomy requires faculty approval.",
+      "proposedMinimalCorrection": null,
+      "confidence": 0.99,
+      "requiredHumanAction": "Faculty approval is required before any change is published."
+    },
+    {
+      "questionId": "68dea616d0cda73d07e93ae6",
+      "reportIds": [
+        "R005"
+      ],
+      "field": "answer",
+      "issueCategory": "answer_key",
+      "originalContent": "2",
+      "evidence": "Gauss-law shares give q/(4ε₀) from the face charge q/2 and q/(4ε₀) from the corner charge 2q. The total is q/(2ε₀), so n=1; the stored key 2 is wrong.",
+      "explanation": "Gauss-law shares give q/(4ε₀) from the face charge q/2 and q/(4ε₀) from the corner charge 2q. The total is q/(2ε₀), so n=1; the stored key 2 is wrong.",
+      "proposedMinimalCorrection": {
+        "field": "answer",
+        "find": "2",
+        "replace": "1"
+      },
+      "confidence": 0.99,
+      "requiredHumanAction": "Review the staged correction before production use; this offline demo never publishes changes."
+    },
+    {
+      "questionId": "68e870ef42c06737d6e565c4",
+      "reportIds": [
+        "R004"
+      ],
+      "field": "answer",
+      "issueCategory": "answer_key",
+      "originalContent": "A",
+      "evidence": "P=ρv²/3=(0.09)(400²)/3=4,800 N/m², option D. The stored solution reaches D while the answer field says A.",
+      "explanation": "P=ρv²/3=(0.09)(400²)/3=4,800 N/m², option D. The stored solution reaches D while the answer field says A.",
+      "proposedMinimalCorrection": {
+        "field": "answer",
+        "find": "A",
+        "replace": "D"
+      },
+      "confidence": 0.99,
+      "requiredHumanAction": "Review the staged correction before production use; this offline demo never publishes changes."
+    },
+    {
+      "questionId": "68e872546e45ba37dcc16bc0",
+      "reportIds": [
+        "R011"
+      ],
+      "field": "question",
+      "issueCategory": "option_repair",
+      "originalContent": "<h3>There are two charges <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mo>+</mo><mn> 3 </mn><mi> &mu; </mi><mi> C </mi></mrow></math> and <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mo>&minus;</mo><mn> 4 </mn><mi> &mu; </mi><mi> C </mi></mrow></math> placed at a certain distance apart. The ratio of coulombic forces acting on them will be<br />(A) <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn> 9 </mn><mi>:</mi><mn> 16 </mn></mrow></math><br />(B) <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn> 2 </mn><mi>:</mi><msqrt><mrow><mn> 3 </mn></mrow></msqrt></mrow></math><br />(C) <br />(D) <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn> 3 </mn><mi>:</mi><mn> 4 </mn></mrow></math></h3>\n",
+      "evidence": "Newton's third law gives equal force magnitudes on both charges, so the ratio is 1:1 and the keyed option C is the intended answer. The C option is blank; only that option text is proposed.",
+      "explanation": "Newton's third law gives equal force magnitudes on both charges, so the ratio is 1:1 and the keyed option C is the intended answer. The C option is blank; only that option text is proposed.",
+      "proposedMinimalCorrection": {
+        "field": "question",
+        "find": "(C)",
+        "replace": "(C) 1 : 1"
+      },
+      "confidence": 0.97,
+      "requiredHumanAction": "Review the staged correction before production use; this offline demo never publishes changes."
+    },
+    {
+      "questionId": "68ecbacb2ec87a18deba1ad7",
+      "reportIds": [
+        "R023"
+      ],
+      "field": "chapter",
+      "issueCategory": "wrong_chapter",
+      "originalContent": "The Living World",
+      "evidence": "The stem is about the neuronal absolute refractory period and Na⁺ channels, but its chapter is The Living World. The question content is sound; its chapter needs faculty review.",
+      "explanation": "The stem is about the neuronal absolute refractory period and Na⁺ channels, but its chapter is The Living World. The question content is sound; its chapter needs faculty review.",
+      "proposedMinimalCorrection": null,
+      "confidence": 0.99,
+      "requiredHumanAction": "Faculty approval is required before any change is published."
+    },
+    {
+      "questionId": "68f21caf941cda588bc04365",
+      "reportIds": [
+        "R021"
+      ],
+      "field": "question",
+      "issueCategory": "type_mismatch",
+      "originalContent": "<h3>A sample of nuclei X contains <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn> 48 </mn><mi>&times;</mi><msup><mn> 10 </mn><mrow><mn> 23 </mn></mrow></msup></mrow></math> nuclei at some time and reduced to <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn> 6 </mn><mi>&times;</mi><msup><mn> 10 </mn><mrow><mn> 23 </mn></mrow></msup></mrow></math> nuclei in 3 minutes. The mean life of nucleus <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi> X </mi></mrow></math> is roughly?<br />\n(A) 0.693 min<br />\n(B) 1.44 min<br />\n(C) 2.079 min<br />\n(D) 4.329 min&nbsp;</h3>\n",
+      "evidence": "Only option B is mathematically correct, but the record is stored as mcq with an unusual answer array [\"\", \"B\"]. This may be a question-type or answer-serialization mismatch; both fields need faculty confirmation before migration.",
+      "explanation": "Only option B is mathematically correct, but the record is stored as mcq with an unusual answer array [\"\", \"B\"]. This may be a question-type or answer-serialization mismatch; both fields need faculty confirmation before migration.",
+      "proposedMinimalCorrection": null,
+      "confidence": 0.91,
+      "requiredHumanAction": "Faculty approval is required before any change is published."
+    },
+    {
+      "questionId": "6956d79788d7701e5617bc29",
+      "reportIds": [
+        "R015"
+      ],
+      "field": "question",
+      "issueCategory": "identical_options",
+      "originalContent": "<h3>In an AC circuit, the current is <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><mstyle displaystyle=\"true\"><mrow><mi>i</mi><mo>=</mo><mn> 5 </mn><mi> sin </mi><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"true\">(</mo><mn> 100 </mn><mi>t</mi><mo>&minus;</mo><mfrac><mrow><mi>&pi;</mi></mrow><mrow><mn> 2 </mn></mrow></mfrac><mo fence=\"true\" form=\"postfix\" stretchy=\"true\">)</mo></mrow><mi>A</mi></mrow></mstyle></math> and voltage is <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>e</mi><mo>=</mo><mn> 200 </mn><mi> sin </mi><mo stretchy=\"false\">(</mo><mn> 100 </mn><mi>t</mi><mo stretchy=\"false\">)</mo></mrow></math> volt. Power consumption in the circuit is ( <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi> cos </mi><msup><mn> 90 </mn><mrow><mo>∘</mo></mrow></msup><mo>=</mo><mn> 0 </mn></mrow></math> )<br />\n(A) 200 W<br />\n(B) 0 W<br />\n(C) 0 W<br />\n(D) 1000 W&nbsp;</h3>\n",
+      "evidence": "Options B and C both say 0 W. Choosing between or replacing duplicate distractors requires authoring a new option, so this must stay with faculty.",
+      "explanation": "Options B and C both say 0 W. Choosing between or replacing duplicate distractors requires authoring a new option, so this must stay with faculty.",
+      "proposedMinimalCorrection": null,
+      "confidence": 0.99,
+      "requiredHumanAction": "Faculty approval is required before any change is published."
+    },
+    {
+      "questionId": "695ee00b88d7701e561aabc5",
+      "reportIds": [
+        "R034"
+      ],
+      "field": "answer",
+      "issueCategory": "answer_key",
+      "originalContent": "D",
+      "evidence": "Equal waves with phase difference π/2 have resultant intensity I₀, so assertion A is true. The reason’s claim that intensity is always the sum for any non-zero phase is false; the correct choice is C. The stored solution contradicts itself and needs faculty review.",
+      "explanation": "Equal waves with phase difference π/2 have resultant intensity I₀, so assertion A is true. The reason’s claim that intensity is always the sum for any non-zero phase is false; the correct choice is C. The stored solution contradicts itself and needs faculty review.",
+      "proposedMinimalCorrection": {
+        "field": "answer",
+        "find": "D",
+        "replace": "C"
+      },
+      "confidence": 0.97,
+      "requiredHumanAction": "Faculty approval is required before any change is published."
+    },
+    {
+      "questionId": "696a866665252c04fc1f81c2",
+      "reportIds": [
+        "R006"
+      ],
+      "field": "question",
+      "issueCategory": "stem_data",
+      "originalContent": "<h3>The volume contraction of a solid copper cube, when subjected to a hydraulic pressure of <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>7</mn><mi>&times;</mi><msup><mn>10</mn><mrow><mn>6</mn></mrow></msup><mrow><mtext>&nbsp;</mtext><mi mathvariant=\"normal\">P</mi><mi mathvariant=\"normal\">a</mi></mrow></mrow></math>, would be <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>_</mi><mi>_</mi><mi>_</mi><mi>_</mi></mrow></math> <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msup><mrow><mi mathvariant=\"normal\">m</mi><mi mathvariant=\"normal\">m</mi></mrow><mrow><mn>3</mn></mrow></msup></mrow></math>.</h3>\n\n<h3>(Given bulk modulus of copper <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mo>=</mo><mn>1.4</mn><mi>&times;</mi><msup><mn>10</mn><mrow><mn>11</mn></mrow></msup><msup><mrow><mi mathvariant=\"normal\">N</mi><mi mathvariant=\"normal\">m</mi></mrow><mrow><mo>&minus;</mo><mn>2</mn></mrow></msup></mrow></math> )</h3>\n",
+      "evidence": "The question omits the cube's side, but its solution substitutes a volume of (10×10⁻² m)³. That implies a 10 cm side; because the value is reconstructed from the solution, faculty should confirm it against the original source.",
+      "explanation": "The question omits the cube's side, but its solution substitutes a volume of (10×10⁻² m)³. That implies a 10 cm side; because the value is reconstructed from the solution, faculty should confirm it against the original source.",
+      "proposedMinimalCorrection": {
+        "field": "question",
+        "find": "a solid copper cube",
+        "replace": "a solid copper cube of side 10 cm"
+      },
+      "confidence": 0.98,
+      "requiredHumanAction": "Faculty approval is required before any change is published."
+    }
+  ],
+  "independently_discovered_findings": [
+    {
+      "questionId": "66fe9dbe22132e5a70a3e579",
+      "reportIds": [],
+      "field": "solution",
+      "issueCategory": "solution_fix",
+      "originalContent": "<h3><ol>\n\t<li>Calcitonin exerts its effects by interacting with target cells, primarily in bone and kidney. The actions of PTH and calcitonin are antagonistic on bone resorption but synergistic on decreasing the renal tubular reabsorption of phosphorus. Insulin and glucagon work synergistically to keep blood glucose concentrations normal. An elevated blood glucose concentration results in the secretion of insulin and glucose is transported into body cells. Aldosterone secretion may be inhibited by potassium depletion, inhibitors of the renin-angiotensin system, dopamine and atrial natriuretic factor. The latter appears to be an important physiological regulator of aldosterone secretion. ANF inhibits basal, ACTH, Angiotensin II and potassium-stimulated aldosterone production in vitro by a direct action on the adrenal gland. Inhibin is a hormone secreted by granulosa cells of the ovary which inhibit the secretion of FSH (Follicle Stimulating Hormone) whereas relaxin produced by ovary and placenta at the time of childbirth to softens the ligament in the pelvis and widens the cervix.</li>\n</ol></h3>",
+      "evidence": "The solution says insulin and glucagon act synergistically. Insulin lowers blood glucose and glucagon raises it, so their regulatory effects are antagonistic.",
+      "explanation": "This is a separate factual error in the explanation, not support for the student answer-key complaint. The stored answer D remains unchanged.",
+      "proposedMinimalCorrection": {
+        "field": "solution",
+        "find": "work synergistically",
+        "replace": "work antagonistically"
+      },
+      "confidence": 0.98,
+      "requiredHumanAction": "Faculty should verify the physiology and approve the solution edit before publication."
+    }
+  ],
+  "unreported_questions_audited": [
+    {
+      "result": "No additional defect confirmed in the supplied record.",
+      "qid": "SecAQ4",
+      "questionId": "68dea87d387eea3d0d95fbe3"
+    },
+    {
+      "result": "No additional defect confirmed in the supplied record.",
+      "qid": "SecAQ14",
+      "questionId": "68dea657387eea3d0d95f54a"
+    },
+    {
+      "result": "No additional defect confirmed in the supplied record.",
+      "qid": "MHCET_PCB_PYQ_2021_1_BIO_L876",
+      "questionId": "695ede2a88d7701e561aa9d9"
+    },
+    {
+      "result": "No additional defect confirmed in the supplied record.",
+      "qid": "SecAQ11",
+      "questionId": "68dea6e6387eea3d0d95f6f8"
+    }
+  ]
+}

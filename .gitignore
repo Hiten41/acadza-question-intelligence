@@ -27,3 +27,7 @@ pnpm-debug.log*
 # Temporary archives and verification extracts
 *.zip
 .zip-verify-*/
+
+.vercel/
+.env*
+!.env.example

@@ -2,41 +2,81 @@
 
 **Recording status:** script prepared; no video recording has been created.
 
-## 0:00–0:20 — Problem and product
+**Production demo:** https://acadza-question-intelligence.vercel.app
 
-“A student report can be a real answer-key defect, a misunderstanding, or an app issue. Acadza Question Intelligence puts the report beside the source question and evidence so a faculty reviewer can decide quickly. This is an offline build-round demo using the supplied dataset.”
+## 0:00–0:15 — Overview
 
-## 0:20–0:45 — Dashboard and priority queue
+**Screen:** Overview dashboard.
 
-Show the dashboard metrics and priority queue. “There are 44 report records grouped into 39 question cases. The repeated reports remain visible under the same question. Priority is a transparent heuristic based on defect severity, review route, confidence, and repetition.”
+**Say:** “A student report can point to a content defect, a misunderstanding, or an app issue. Acadza Question Intelligence keeps each report connected to its source question and evidence. This build-round demo uses the supplied assignment snapshot and pre-reviewed offline decisions.”
 
-## 0:45–1:15 — Answer-key defect
+**Transition:** Open **Review Queue** and search for `R001`.
 
-Open R001–R003. “Three reports refer to the same LCR circuit. The stored solution computes 50 volts; that matches option A, while the record stores C. The queue keeps the three original reports attached to one case.”
+## 0:15–0:40 — Queue and grouped reports
 
-## 1:15–1:45 — Patch and safety checks
+**Screen:** Review Queue with the R001 case and its three linked reports.
 
-Open the answer tab, then the proposed change and validation checklist. “The patch only changes the answer field and checks its source value against the taxonomy. The record is not overwritten; applying here records a local staging action in this browser.”
+**Say:** “The dataset contains 44 reports grouped into 39 question cases. Here, three reports describe the same LCR question. The queue preserves each original report while presenting the shared case together.”
 
-## 1:45–2:15 — Difficult faculty review
+**Transition:** Select an individual report, then open **Answer & history**.
 
-Open R034. “This assertion/reason question has no supported correct option as written. The system proposes no answer and requires a faculty decision. A missing diagram or syllabus claim follows the same human gate.”
+## 0:40–1:05 — Investigation and mathematical comparison
 
-## 2:15–2:40 — False report and non-content issue
+**Screen:** R001 investigation, source question, and before/after panel.
 
-Show R017, then R038. “R017's alleged spelling problem is not present in the current source, so the content stays unchanged. R038 reports that the app saved a different option; that belongs with platform behavior, not a question-bank edit.”
+**Say:** “The phasor sum is the square root of 40 squared plus 30 squared, which is 50 volts. The supplied solution agrees with option A, while the stored answer key is C. The proposed patch changes only the answer field.”
 
-## 2:40–3:00 — Audit and impact
+**Transition:** Choose **Stage safe correction** to show the explicit confirmation and safety checks.
 
-Record a local decision and open Audit history. “The reviewer can see which reports were handled, edit a student reply preview, and export the local audit. A production version needs server persistence and authenticated review. The purpose is to help students get reliable questions and close the loop on valid reports.”
+## 1:05–1:30 — Safe local staging
+
+**Screen:** Staging confirmation, then **Approved / Staged Changes**.
+
+**Say:** “The source question stays unchanged. Staging records a browser-local review action after the safety checks pass. It does not publish a correction or write to Acadza.”
+
+**Transition:** Return to the queue and search for `R034`.
+
+## 1:30–1:55 — Faculty review gate
+
+**Screen:** R034 case and approval confirmation dialog.
+
+**Say:** “This assertion/reason record proposes C, but its supplied solution is internally inconsistent. The case requires a human gate and does not offer the safe-stage action. A faculty approval opens its own confirmation; I’ll cancel here to leave the example pending.”
+
+**Transition:** Close the dialog and open **Proactive Findings**.
+
+## 1:55–2:10 — Separate findings
+
+**Screen:** Proactive Findings.
+
+**Say:** “These independent notes come from the bonus findings file. The interface keeps them separate from student-reported defects.”
+
+**Transition:** Return to the queue and search `R017`, then `R038`.
+
+## 2:10–2:30 — Non-content reports
+
+**Screen:** R017, then R038.
+
+**Say:** “R017’s spelling report is already addressed in the current question record, so no content edit is proposed. R038 describes a selected answer being saved differently; that is routed as an app issue, with no question-bank correction.”
+
+**Transition:** Open **Approved / Staged Changes**, then **Audit History**.
+
+## 2:30–2:50 — Audit trail and export
+
+**Screen:** Staged list, Audit History entry, and Export JSON control.
+
+**Say:** “The reviewer can inspect the staged action, its before and after values, and the local audit entry. Export JSON downloads this browser’s history; it is not a server-backed audit log.”
+
+**Transition:** Use **Reset demo** and confirm.
+
+## 2:50–3:00 — Close
+
+**Screen:** The cleared Audit History view after the reset confirmation.
+
+**Say:** “Reset clears only this browser’s review state. The source assignment data stays read-only. This prototype demonstrates the review workflow; it is not live AI or an Acadza production integration.”
 
 ## Recording preparation
 
-No recording has been created. To reproduce the walkthrough:
-
-1. In the project directory, run `npm ci`, then `npm run dev`, and open the Vite URL printed in the terminal (normally `http://127.0.0.1:5173/`).
-2. Choose **Reset demo** in the footer and confirm so the browser-local audit and decisions start clean.
-3. Follow the timed sections in order: **Overview** → **Review Queue**, search `R001`, inspect the grouped R001–R003 reports, choose the **Answer & history** source tab, then inspect the answer-key before/after panel → search `R034` and show its faculty gate → search `R017` and show its no-change decision → **Audit History** and record a local review action → describe the offline-only safety boundary.
-4. For Xbox Game Bar, focus the browser window and press **Win+Alt+R** to start and again to stop recording. Review the capture and audio settings with **Win+G** before recording; the default capture folder is **Videos\Captures**. Alternatively, in OBS select the browser window as the capture source and record at 1920×1080.
-
-The public repository does not contain a recording link. Add one only after an actual video has been recorded and uploaded by the user.
+1. Open the production URL above in Chrome. Use a fresh browser profile, or choose **Reset demo** and confirm before recording.
+2. Set the browser to a desktop viewport, then follow the screen sequence and timings above. Keep browser zoom at 100% and close unrelated tabs or notifications.
+3. On Windows, press **Win+Alt+R** to start and stop Xbox Game Bar recording. Use **Win+G** to check capture and microphone settings first; Game Bar normally saves recordings in `Videos\Captures`. Alternatively, use OBS to capture the browser window at 1920 × 1080 and record narration with a microphone.
+4. Review the actual video and audio before sharing it. No recording link should be added until a video has genuinely been recorded and uploaded.

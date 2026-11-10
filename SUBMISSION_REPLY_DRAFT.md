@@ -9,7 +9,7 @@ Hi Subham,
 Thank you for inviting me to the build round. I built ACADZA | QUESTION INTELLIGENCE, a faculty console that groups student reports by question, shows evidence and surgical proposed corrections, and routes uncertain cases to human review.
 
 - Repository: **https://github.com/Hiten41/acadza-question-intelligence**
-- Live application: **Not deployed yet; deployment is deferred for this release.**
+- Live application: **https://acadza-question-intelligence.vercel.app**
 - Three-minute walkthrough: **[add recording link after recording]**
 - Local demo: `npm ci` then `npm run dev`; see the README for the workflow and limitations.
 

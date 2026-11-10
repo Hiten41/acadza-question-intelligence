@@ -39,6 +39,8 @@
 - Final release validation regenerated the original 44 results unchanged (the SHA-256 of `results.json` remains `15BF7DE3476512C540F47CA943B3185F7AFAC62F86CD72B01245E942E8E31901`).
 - Release secret scan found no credential-format matches or student IDs in report records. `PROMPTS.md` retains the original prompt verbatim, including its generic `C:\Users\DELL\Downloads\...` example path.
 - GitHub Pages deployment is intentionally deferred; no live URL is claimed.
+- Created and verified the public repository at `https://github.com/Hiten41/acadza-question-intelligence`; the initial push to `main` matched the locally verified release commit.
+- No deployment was started and no email was sent. The submission reply remains a draft with personal answers and the video link left for the user.
 
 ## Remaining demonstration limits
 

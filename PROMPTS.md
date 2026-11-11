@@ -37,13 +37,13 @@ Check:
 - Downloads directory.
 - Uploaded conversation attachments, if accessible.
 
-On my Windows machine, also check:
+In the local Downloads directory, also check:
 
-`C:\Users\DELL\Downloads\Acadza_AI_Intern_Assignment.zip`
+`Acadza_AI_Intern_Assignment.zip`
 
 and
 
-`C:\Users\DELL\Downloads\Acadza_AI_Intern_Assignment (1).zip`
+`Acadza_AI_Intern_Assignment (1).zip`
 
 Do not assume the archive is in any particular location.
 

@@ -4,7 +4,7 @@
 
 Subject: Acadza AI Intern build round submission
 
-Hi Subham,
+Hi,
 
 Thank you for inviting me to the build round. I built ACADZA | QUESTION INTELLIGENCE, a faculty console that groups student reports by question, shows evidence and surgical proposed corrections, and routes uncertain cases to human review.
 

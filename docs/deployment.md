@@ -3,28 +3,29 @@
 ## Production deployment
 
 - **Live URL:** https://acadza-question-intelligence.vercel.app
+- **Production deployment URL:** https://acadza-question-intelligence-744ctakq7-hiten41s-projects.vercel.app
 - **Repository:** https://github.com/Hiten41/acadza-question-intelligence
-- **Vercel project:** `hiten41s-projects/acadza-question-intelligence` (Hobby)
-- **Production deployment ID:** `dpl_HnccR9bi8auX9DUpzFKap8wsRGEV`
-- **Status:** Ready; verified on 11 November 2026 (Asia/Kolkata).
+- **Vercel project:** `hiten41s-projects/acadza-question-intelligence` (existing Hobby project)
+- **Production deployment ID:** `dpl_5CcUm6D9JBrn2dCQFWvJfFb7eRv7`
+- **Status:** Ready; deployed and verified on 11 November 2026 (Asia/Kolkata).
 - **Public access:** An unauthenticated request to the production alias returned HTTP 200.
 
 The project uses the existing Vite configuration: framework preset `Vite`, install command `npm ci`, build command `npm run build`, and output directory `dist`. `vercel.json` contains the build and output settings.
 
 ## Verification
 
-The production release checks passed:
+The release checks passed on the final source snapshot:
 
-- `npm ci`
-- `npm run lint`
-- `npm test` — 27 tests across 4 files
-- `npm run results` — 44 report-level results generated from 43 source questions (11 safe auto candidates and 19 faculty reviews)
-- `npm run build`
-- `npm audit` — 0 vulnerabilities
+- `npm ci` — dependencies installed; 0 reported vulnerabilities.
+- `npm run lint` — passed.
+- `npm test` — 27 tests across 4 files passed.
+- `npm run results` — generated exactly 44 report-level results from 43 source questions (11 safe auto candidates and 19 faculty reviews).
+- `npm run build` — TypeScript and Vite production build passed.
+- `npm audit` — 0 vulnerabilities.
+- Chromium browser walkthrough — 35 checks passed on the public production alias with no uncaught browser or console errors. Checks covered overview counts and charts, global search, grouped R001 reports, the exact C-to-A mathematical change, confirmed local staging, persistence across refresh, proactive findings, the R034 faculty gate, staged decisions, audit history and JSON export, confirmed reset, mobile navigation and case detail, sidebar collapse, and seven viewport widths (360, 390, 768, 1024, 1280, 1440, and 1920 pixels) without horizontal overflow.
+- The public alias returned HTTP 200 after deployment. The production URL and screenshots were verified against deployment `dpl_5CcUm6D9JBrn2dCQFWvJfFb7eRv7`.
 
-Both `results.json` and `bonus_findings.json` retained their original SHA-256 hashes after result generation. The production application was exercised in Chromium with 36 passing browser checks and no uncaught browser or console errors. These covered the overview values and four data-derived charts, global search, R001 grouped reports and mathematical before/after values, confirmed local staging, persistence across refresh, proactive findings, the R034 faculty gate, audit history and JSON export, confirmed reset, mobile navigation and case detail, and desktop sidebar behavior. Layout checks at 360, 390, 768, 1024, 1280, 1440, and 1920 pixels found no horizontal overflow.
-
-Genuine screenshots from the production deployment are in [`screenshots/deployed/`](../screenshots/deployed/).
+`results.json` SHA-256 remained `15BF7DE3476512C540F47CA943B3185F7AFAC62F86CD72B01245E942E8E31901`, and `bonus_findings.json` SHA-256 remained `06E593FE6510606341B3BB370703C0617D9EFFC98B79553FB74AB6D790CC215E` after regeneration. Genuine screenshots captured from this public production deployment are in [`screenshots/deployed/`](../screenshots/deployed/).
 
 ## Scope and limitations
 

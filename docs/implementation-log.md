@@ -37,7 +37,7 @@
 - Expanded `.gitignore` for credentials, `.env`, dependencies, build output, caches, temporary files, and ZIP archives. The original assignment ZIP is outside the project and excluded.
 - Added a shared conservative route policy used by both result generation and browser action checks. An explicit automatic route can no longer bypass the derived safety conditions.
 - Final release validation regenerated the original 44 results unchanged (the SHA-256 of `results.json` remains `15BF7DE3476512C540F47CA943B3185F7AFAC62F86CD72B01245E942E8E31901`).
-- Release secret scan found no credential-format matches or student IDs in report records. `PROMPTS.md` retains the original prompt verbatim, including its generic `C:\Users\DELL\Downloads\...` example path.
+- Release review found no credential-format matches or student IDs in report records. Local Windows path references in `PROMPTS.md` were reduced to archive filenames, and the submission reply draft omits the recipient name.
 - The Vercel production deployment completed successfully on 11 November 2026. Its production URL, configuration, and public HTTP verification are recorded in [deployment documentation](deployment.md).
 - Created and verified the public repository at `https://github.com/Hiten41/acadza-question-intelligence`; the initial push to `main` matched the locally verified release commit.
 - No email was sent. The submission reply remains a draft with personal answers and the video link left for the user.
@@ -64,3 +64,13 @@
 ## Remaining demonstration limits
 
 The application uses a pre-reviewed offline assignment baseline. It has no live LLM calls, Acadza production connection, authentication, shared server, or production write endpoint. Review decisions and audit records persist only in the current browser profile. A public Vercel deployment exists at the URL recorded above; it does not add server-side review capability. No email has been sent or assignment submitted. Review the included submission draft and distribution rights separately before using them.
+
+## 11 November 2026 — human-directed dark interface refinement and final production release
+
+- Refined the existing application into a restrained, neutral dark interface: removed repetitive overview tiles, centered the overview on assignment-derived charts and review priorities, tightened sidebar and navigation treatments, and differentiated the operational queue, technical investigation, editorial findings, staged changes, and audit log.
+- Kept the assignment questions, reports, `results.json`, `bonus_findings.json`, taxonomy, adjudications, safety checks, local review behavior, and audit workflow unchanged. The overview statistics and visualizations remain derived from the original assignment snapshot and browser-local decisions.
+- Verified the final source with `npm ci`, `npm run lint`, all 27 tests, `npm run results` (44 results from 43 questions), `npm run build`, and `npm audit` (0 vulnerabilities). The SHA-256 hashes of `results.json` and `bonus_findings.json` remained unchanged.
+- Deployed the final interface to the existing Vercel Hobby project. Deployment ID: `dpl_5CcUm6D9JBrn2dCQFWvJfFb7eRv7`; public production URL: https://acadza-question-intelligence.vercel.app. The alias returned HTTP 200 without authentication.
+- Replayed 35 browser checks on the live production deployment, covering the overview, search and review flow, R001 mathematical comparison and confirmed local staging, persistence, proactive findings, the R034 faculty restriction, staged changes, audit JSON export, reset, seven responsive viewport widths, mobile navigation, and desktop sidebar collapse. No browser or console errors were observed.
+- Replaced the nine production screenshots under `screenshots/deployed/` with genuine captures of this deployment.
+- This is still an offline demonstration of the supplied reviewed assignment baseline, not a live LLM or Acadza production integration. No assignment data was changed, no email was sent, and no assignment was submitted.

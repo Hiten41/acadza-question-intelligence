@@ -4,7 +4,7 @@
 
 > **Live production demo:** [https://acadza-question-intelligence.vercel.app](https://acadza-question-intelligence.vercel.app)
 
-> **Interface:** dark-first, responsive review workspace with charts derived from the assignment results.
+> **Interface:** restrained, neutral dark review workspace with readable investigation details and data-derived charts.
 
 > **Demonstration only:** decisions are pre-reviewed offline assignment data. The app does not call a live LLM, connect to Acadza production, publish corrections, or provide server-side audit guarantees. Faculty decisions persist in the current browser's local storage.
 

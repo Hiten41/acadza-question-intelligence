@@ -1,26 +1,31 @@
 # Acadza build-round reply draft
 
-**Do not send without reviewing the personal answers and confirming all links.**
-
 Subject: Acadza AI Intern build round submission
 
-Hi,
+Hi Subham,
 
-Thank you for inviting me to the build round. I built ACADZA | QUESTION INTELLIGENCE, a faculty console that groups student reports by question, shows evidence and surgical proposed corrections, and routes uncertain cases to human review.
+Thank you for inviting me to the build round. I am sharing Acadza Question Intelligence, a faculty-facing demonstration that investigates student reports at the question level while preserving each individual report. It presents evidence-backed defect analysis and clear before/after proposals, checks whether a repair is eligible, routes uncertain or restricted changes to faculty, and supports local review and audit workflows.
 
-- Repository: **https://github.com/Hiten41/acadza-question-intelligence**
-- Live application: **https://acadza-question-intelligence.vercel.app**
-- Three-minute walkthrough: **[add recording link after recording]**
-- Local demo: `npm ci` then `npm run dev`; see the README for the workflow and limitations.
+The application uses pre-reviewed offline assignment adjudications. It does not make live LLM predictions or connect to Acadza’s production systems.
 
-My answers to the role questions:
+- GitHub repository: https://github.com/Hiten41/acadza-question-intelligence
+- Live application: https://acadza-question-intelligence.vercel.app
+- Three-minute walkthrough: [VIDEO LINK — TO BE ADDED AFTER UPLOAD]
 
-1. Is this long-term remote Monday-to-Saturday product-building role genuinely what you want? **[Write your honest answer.]**
-2. How many months can you commit? **[Confirm your duration.]**
-3. What is your earliest start date? **[Confirm your date.]**
-4. In 2–3 lines, why this work and why now? **[Add your personal reason. Suggested starting point: “I’m interested in building reliable tools that help students trust the material they study. This project let me work through the full path from a report to evidence, a safe correction, and a faculty decision.” Edit this so it reflects your own motivation.]**
+1. **Is this long-term remote Monday-to-Saturday product-building role genuinely what you want?**
 
-I have included `PROMPTS.md` with the development prompt and an explicit account of the offline baseline, along with the product notes, evaluation limits, and a three-minute demo script.
+   Yes. I am genuinely interested in building and improving real-world products, particularly in applied AI and software engineering. I understand the remote, Monday-to-Saturday structure and would be committed to contributing meaningfully during my internship.
 
-Regards,
-**[Your name]**
+2. **How many months can you commit?**
+
+   I can commit up to three months for the internship.
+
+3. **What is your earliest start date?**
+
+   My earliest available start date is 3 May 2027.
+
+4. **In 2–3 lines, why this work and why now?**
+
+   My experience building MineMind AI, a retrieval-augmented AI system, and CollegeHub, a full-stack application, has strengthened my interest in developing reliable software and applied AI products. Acadza offers an opportunity to combine evidence-based verification, safe automation, and product engineering to improve learning experiences for students at scale.
+
+Best regards,

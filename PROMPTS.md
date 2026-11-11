@@ -1,5 +1,7 @@
 # MASTER AUTONOMOUS CODEX PROMPT — ACADZA AI INTERN BUILD ROUND
 
+> **Current release snapshot — 12 November 2026:** This file preserves earlier prompts and time-specific outcomes as historical context. The latest production record is deployment `dpl_GMkT9TWaDke4CDLGWYjURGpesbTG`, Ready on Vercel; an authenticated deployment-list check found no newer production deployment. The public alias is https://acadza-question-intelligence.vercel.app and returned HTTP 200. The latest recorded browser walkthrough has 37 Chromium checks; earlier 23-, 35-, and 36-check runs are historical. The final public video is an edited 3:00 highlight cut: [watch it here](https://github.com/Hiten41/acadza-question-intelligence/releases/download/acadza-demo-walkthrough-2026-11-11/Acadza-Question-Intelligence-Walkthrough-Trimmed.mp4). It shows R001 staged and R034 approved as browser-local demonstration actions; the audit view contains those two local entries. This approval is not a real faculty decision or an Acadza production write. The application remains an offline demonstration, not a live LLM or Acadza production integration.
+
 ## MISSION
 
 Build a complete, exceptionally polished, working AI-powered question-defect detection and correction platform for Acadza.
@@ -2546,7 +2548,7 @@ Do not stop after creating the GitHub repository. Finish deployment and verify t
 BEGIN WITH THE EXISTING POLISHED PROJECT.
 `````
 
-**Recorded outcome:** The public repository is https://github.com/Hiten41/acadza-question-intelligence. The Vercel history is chronological: the first recorded production verification lists deployment dpl_2n4fzg3jytmJqdiRGobVYeV1ubAA and 23 browser checks; later visual refinements produced newer deployments. The current deployment record is in docs/deployment.md and docs/implementation-log.md. Those records distinguish requested actions from checks actually performed.
+**Recorded outcome:** The public repository is https://github.com/Hiten41/acadza-question-intelligence. The Vercel history is chronological: the first recorded production verification lists deployment dpl_2n4fzg3jytmJqdiRGobVYeV1ubAA and 23 browser checks; later visual refinements produced newer deployments. The current deployment record is in docs/deployment.md and docs/implementation-log.md. Those records distinguish requested actions from checks actually performed. The prompt's video-link placeholder was later replaced with the public 3:00 walkthrough: https://github.com/Hiten41/acadza-question-intelligence/releases/download/acadza-demo-walkthrough-2026-11-11/Acadza-Question-Intelligence-Walkthrough-Trimmed.mp4.
 
 #### Follow-up production deployment instructions
 

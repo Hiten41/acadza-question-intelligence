@@ -11,6 +11,8 @@ Open the [public production demo](https://acadza-question-intelligence.vercel.ap
 7. **Audit History and export:** return to **Approved / Staged Changes**, then open **Audit History**. Filter by report or question ID, expand the staged entry, and use **Export JSON** to download the browser-local history.
 8. **Reset:** choose **Reset demo**, review the confirmation, and confirm the reset. The local decisions and audit entries clear; the supplied question and report data remain unchanged.
 
+The submitted [three-minute highlight cut](https://github.com/Hiten41/acadza-question-intelligence/releases/download/acadza-demo-walkthrough-2026-11-11/Acadza-Question-Intelligence-Walkthrough-Trimmed.mp4) shows the Overview, the R001 mathematical investigation and local staging, the R034 faculty-review gate, Proactive Findings, a local R034 approval demonstration, staged changes, and Audit History. Its final audit view contains two browser-local actions: R001 staged and R034 approved. This is a demonstration action, not a real faculty decision or a production correction. The edited video does not show every step in this longer walkthrough.
+
 At 390 × 844 mobile width, the queue search remains usable without page-level horizontal overflow. **All cases** returns from a mobile case detail view; `Ctrl+K` / `Cmd+K` focuses queue search and `Escape` clears search or exits mobile detail.
 
 Local fallback: run `npm ci` and `npm run dev`, then open the Vite URL printed in the terminal, normally `http://127.0.0.1:5173/`.

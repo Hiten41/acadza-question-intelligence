@@ -40,7 +40,7 @@
 - Release review found no credential-format matches or student IDs in report records. Local Windows path references in `PROMPTS.md` were reduced to archive filenames, and the submission reply draft omits the recipient name.
 - The Vercel production deployment completed successfully on 11 November 2026. Its production URL, configuration, and public HTTP verification are recorded in [deployment documentation](deployment.md).
 - Created and verified the public repository at `https://github.com/Hiten41/acadza-question-intelligence`; the initial push to `main` matched the locally verified release commit.
-- No email was sent. The submission reply remains a draft with personal answers and the video link left for the user.
+- No email was sent. At that stage the submission reply was still being finalized; later dated entries below record the released video link and draft synchronization.
 
 ## 11 November 2026 — Vercel production deployment verification
 
@@ -89,9 +89,20 @@ The application uses a pre-reviewed offline assignment baseline. It has no live 
 - All 27 tests passed. The production Chromium walkthrough passed 37 checks, including verification of the readable finding title/category and expandable source ID. No browser or console errors occurred.
 - Refreshed the production screenshots and visual comparison package. `results.json` and `bonus_findings.json` hashes remain unchanged.
 
-## 12 November 2026 — submission package check
+## 12 November 2026 — initial submission package check (video superseded)
 
 - Compared the release against the preserved assignment deliverables and four submission questions in `PROMPTS.md`. The repository includes the application, source data, 44 report-level results, bonus findings, tests, required documentation, production screenshots, public repository, and live deployment.
-- Verified that the trimmed 2:59 walkthrough is attached to the public GitHub release and its direct asset URL returns HTTP 200.
-- Replaced the obsolete recording instructions with the actual visible sequence and linked the released video. The email draft includes the video, repository, production URL, and confirmed answers; `[Your name]` remains for the user to fill in.
+- Verified that the initial trimmed 2:59 walkthrough was attached to the public GitHub release and its direct asset URL returned HTTP 200. This version was later replaced by the final 3:00 highlight cut recorded below.
+- Replaced the obsolete recording instructions with the then-current visible sequence and linked that release asset. The email draft includes the video, repository, production URL, and confirmed answers; `[Your name]` remains for the user to fill in.
 - The application remains an offline demonstration using pre-reviewed adjudications, not a live LLM or Acadza production integration. No email was sent and no assignment was submitted.
+
+## 12 November 2026 — final documentation and video synchronization
+
+- Checked the authenticated Vercel CLI 65.14.0 deployment list. The newest production deployment remains `dpl_GMkT9TWaDke4CDLGWYjURGpesbTG` (Ready, created 11 November at 21:31 IST); no newer production deployment was listed. The production alias returned HTTP 200.
+- Kept the latest recorded production browser result at 37 Chromium checks. Earlier runs of 23, 35, and 36 checks remain labeled historical; no count is presented as cumulative.
+- Replaced the earlier GitHub release video asset with the user-provided `Acadza_Question_Intelligence_3min_Walkthrough.mp4`. Its measured duration is 180.01 seconds at 1920 × 1020; SHA-256 is `C9350B05609FD3A10C854FA6BB942DA3822D51D0901F8E4732C19A44E4EE0CC3`. The public asset path is unchanged and was rechecked after upload.
+- Synchronized `README.md`, `VIDEO_SCRIPT.md`, `SUBMISSION_REPLY_DRAFT.md`, `docs/deployment.md`, `docs/demo-walkthrough.md`, `docs/assignment-analysis.md`, `docs/testing-report.md`, and this log. `PROMPTS.md` now begins with a dated current-status note while retaining the original prompts and historical outcomes.
+- The highlight cut shows the Overview; R001–R003 investigation, mathematical evidence, before/after proposal, and local staging; the R034 faculty gate; Proactive Findings; a local R034 approval demonstration; staged changes; and Audit History. The final audit view shows two browser-local actions: R001 staged and R034 approved. Neither is a real faculty decision or production write.
+- The exact audio wording was not reliably transcribed. `VIDEO_SCRIPT.md` therefore gives a screen-aligned narration guide and does not claim to be a verbatim transcript.
+- On 12 November, lint passed, all 27 tests passed, the production build passed (1,587 modules transformed), and `npm audit` reported 0 vulnerabilities. Read-only integrity checks confirmed 43 questions, 44 source reports, 44 unique matching results, and unchanged result/bonus hashes; result generation was not rerun.
+- The application, assignment source data, `results.json`, `bonus_findings.json`, and adjudications remain unchanged. The application remains an offline demonstration with browser-local review state, no live LLM, no Acadza production connection, and no production write path. No email was sent and no assignment was submitted.

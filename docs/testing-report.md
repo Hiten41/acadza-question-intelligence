@@ -1,17 +1,20 @@
 # Testing report
 
-**Final verification:** 10 November 2026
+**Latest local checks:** 12 November 2026
+
+The deployment-specific browser verification is documented separately in [deployment status](deployment.md). The 10 November dependency installation and result-generation run are historical; the existing results were checked for completeness and matching report IDs on 12 November without regenerating or modifying the assignment data.
 
 ## Command results
 
 | Command | Result |
 | --- | --- |
-| `npm ci` | Completed; 198 packages installed, 0 vulnerabilities reported by npm. |
-| `npm run lint` | Passed. |
-| `npm test` | Passed: 27 tests across 4 files. |
-| `npm run results` | Generated exactly 44 report results from 43 questions: 11 safe auto candidates and 19 faculty reviews. |
-| `npm run build` | Passed TypeScript (`tsc -b`) and Vite production build; 1,586 modules transformed. |
-| `npm audit` | 0 vulnerabilities. |
+| `npm ci` | 10 November run: 198 packages installed; 0 vulnerabilities reported during installation. |
+| `npm run lint` | Passed on 12 November. |
+| `npm test` | Passed on 12 November: 27 tests across 4 files. |
+| Results integrity | On 12 November, valid JSON contained 43 questions, 44 source reports, and 44 unique results matching the report IDs exactly. Existing artifact hashes were preserved. |
+| `npm run results` | Last generated during the documented release run: 44 report results from 43 questions, with 11 safe auto candidates and 19 faculty reviews. It was not rerun during the documentation-only update. |
+| `npm run build` | Passed on 12 November: TypeScript (`tsc -b`) and Vite production build; 1,587 modules transformed. |
+| `npm audit` | 0 vulnerabilities on 12 November. |
 
 ## Data integrity
 

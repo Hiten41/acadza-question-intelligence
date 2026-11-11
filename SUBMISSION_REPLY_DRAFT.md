@@ -10,7 +10,7 @@ The application uses pre-reviewed offline assignment adjudications. It does not 
 
 - GitHub repository: https://github.com/Hiten41/acadza-question-intelligence
 - Live application: https://acadza-question-intelligence.vercel.app
-- Three-minute walkthrough (2:59): https://github.com/Hiten41/acadza-question-intelligence/releases/download/acadza-demo-walkthrough-2026-11-11/Acadza-Question-Intelligence-Walkthrough-Trimmed.mp4
+- Three-minute walkthrough (3:00): https://github.com/Hiten41/acadza-question-intelligence/releases/download/acadza-demo-walkthrough-2026-11-11/Acadza-Question-Intelligence-Walkthrough-Trimmed.mp4
 
 1. **Is this long-term remote Monday-to-Saturday product-building role genuinely what you want?**
 

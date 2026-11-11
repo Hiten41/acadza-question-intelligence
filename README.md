@@ -4,6 +4,8 @@
 
 > **Live production demo:** [https://acadza-question-intelligence.vercel.app](https://acadza-question-intelligence.vercel.app)
 
+> **Three-minute walkthrough:** [Watch the edited 3:00 highlight cut](https://github.com/Hiten41/acadza-question-intelligence/releases/download/acadza-demo-walkthrough-2026-11-11/Acadza-Question-Intelligence-Walkthrough-Trimmed.mp4)
+
 > **Interface:** restrained, neutral dark review workspace with concise investigation headings, readable finding labels, and data-derived charts.
 
 > **Demonstration only:** decisions are pre-reviewed offline assignment data. The app does not call a live LLM, connect to Acadza production, publish corrections, or provide server-side audit guarantees. Faculty decisions persist in the current browser's local storage.

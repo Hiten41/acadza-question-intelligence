@@ -34,7 +34,7 @@ The repair set is `spelling`, `noise`, `exam_reference`, `markup_leak`, `answer_
 | Preserve source content and sanitize HTML/MathML rendering | Implemented |
 | AI provider abstraction and generalized runtime model pipeline | Not implemented; no provider key available, and no model call is claimed |
 | Server-side durable audit and live Acadza update | Not implemented |
-| Public repository/live deployment | Not created or verified |
+| Public repository/live deployment | Public repository and production deployment verified; current alias and checks are recorded in [deployment status](deployment.md) |
 
 ## Technical plan used
 

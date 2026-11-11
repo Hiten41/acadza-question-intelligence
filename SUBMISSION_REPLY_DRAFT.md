@@ -29,5 +29,4 @@ The application uses pre-reviewed offline assignment adjudications. It does not 
    My experience building MineMind AI, a retrieval-augmented AI system, and CollegeHub, a full-stack application, has strengthened my interest in developing reliable software and applied AI products. Acadza offers an opportunity to combine evidence-based verification, safe automation, and product engineering to improve learning experiences for students at scale.
 
 Best regards,
-
-[Your name]
+Hiten Arora

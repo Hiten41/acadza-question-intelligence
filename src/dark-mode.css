@@ -722,7 +722,11 @@ code, kbd, .detail-id, .date-stamp, .audit-time, .report-heading time, .case-id 
 .redesign-shell .finding-card > .button { justify-self: start; width: auto; padding: 0; border: 0; color: var(--accent-blue); background: transparent; }
 .redesign-shell .finding-card > .button:hover:not(:disabled) { color: #91a5ff; background: transparent; }
 .redesign-shell .finding-card h3 { margin: 7px 0 2px; color: var(--text-primary); font: 580 15px Inter,sans-serif; }
+.redesign-shell .finding-card h3 { display: -webkit-box; overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
 .redesign-shell .finding-meta { color: var(--text-muted); font-size: 11px; }
+.redesign-shell .finding-record-id { color: var(--text-muted); font: 10px ui-monospace,Consolas,monospace; }
+.redesign-shell .finding-record-id summary { width: max-content; cursor: pointer; color: var(--text-muted); }
+.redesign-shell .finding-record-id code { display: block; margin-top: 5px; color: var(--text-secondary); overflow-wrap: anywhere; }
 .redesign-shell .finding-card > p:not(.finding-meta):not(.human-action), .redesign-shell .finding-card details { color: var(--text-secondary); font-size: 13px; line-height: 1.6; }
 .redesign-shell .finding-card summary { color: var(--accent-blue); cursor: pointer; }
 .redesign-shell .finding-patch { border-color: var(--border); background: var(--bg-sidebar); }
@@ -733,7 +737,7 @@ code, kbd, .detail-id, .date-stamp, .audit-time, .report-heading time, .case-id 
 .redesign-shell .proactive-bottom { margin-top: 25px; border-top: 1px solid var(--border); }
 .redesign-shell .proactive-bottom .panel { padding: 18px 0; border: 0; border-bottom: 1px solid var(--border); border-radius: 0; background: transparent; }
 .redesign-shell .independent-finding, .redesign-shell .unreported-row { color: var(--text-secondary); border-color: var(--border); }
-.redesign-shell .independent-finding strong, .redesign-shell .unreported-row strong { color: var(--text-primary); font: 550 12px ui-monospace,Consolas,monospace; }
+.redesign-shell .independent-finding strong, .redesign-shell .unreported-row strong { color: var(--text-primary); font: 550 12px Inter,sans-serif; }
 .redesign-shell .independent-finding p { color: var(--text-secondary); font-size: 12px; line-height: 1.6; }
 .redesign-shell .status-pills { max-width: 100%; border: 0; border-bottom: 1px solid var(--border); border-radius: 0; background: transparent; }
 .redesign-shell .status-pills button { color: var(--text-muted); }

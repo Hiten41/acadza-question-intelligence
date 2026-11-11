@@ -74,3 +74,9 @@ The application uses a pre-reviewed offline assignment baseline. It has no live 
 - Replayed 35 browser checks on the live production deployment, covering the overview, search and review flow, R001 mathematical comparison and confirmed local staging, persistence, proactive findings, the R034 faculty restriction, staged changes, audit JSON export, reset, seven responsive viewport widths, mobile navigation, and desktop sidebar collapse. No browser or console errors were observed.
 - Replaced the nine production screenshots under `screenshots/deployed/` with genuine captures of this deployment.
 - This is still an offline demonstration of the supplied reviewed assignment baseline, not a live LLM or Acadza production integration. No assignment data was changed, no email was sent, and no assignment was submitted.
+## 11 November 2026 — concise investigation headings
+
+- Removed repeated subtitles, decorative icons, and the redundant offline-baseline pill from investigation section headers. Kept short labels for evidence review, reports, the question record, the proposed change, and the reply preview; retained the decision status badge where it communicates staged/approved state.
+- Deployed the update to the existing Vercel project as `dpl_GRSS2r9pezg6twymZB3g53inTzC8` (Ready). The public alias returned HTTP 200.
+- All 27 tests passed. The production browser walkthrough passed 36 checks, including the concise section-heading check and mobile/desktop layout sweep, with no browser or console errors.
+- Captured refreshed screenshots from the live deployment. Assignment result hashes are unchanged.

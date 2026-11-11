@@ -80,3 +80,11 @@ The application uses a pre-reviewed offline assignment baseline. It has no live 
 - Deployed the update to the existing Vercel project as `dpl_GRSS2r9pezg6twymZB3g53inTzC8` (Ready). The public alias returned HTTP 200.
 - All 27 tests passed. The production browser walkthrough passed 36 checks, including the concise section-heading check and mobile/desktop layout sweep, with no browser or console errors.
 - Captured refreshed screenshots from the live deployment. Assignment result hashes are unchanged.
+
+## 11 November 2026 — readable proactive finding references
+
+- Replaced raw taxonomy keys (including `stem_data`) with concise human-readable category labels and replaced prominent database ObjectIds with a short question-text preview plus the related report IDs. Full record IDs remain available under a collapsed technical reference.
+- Applied the same human-readable labels and record-ID treatment to independent findings and the unreported-question audit list. The source bonus file and assignment results were not changed.
+- Deployed to the existing Vercel project as `dpl_GMkT9TWaDke4CDLGWYjURGpesbTG` (Ready); the public alias returned HTTP 200.
+- All 27 tests passed. The production Chromium walkthrough passed 37 checks, including verification of the readable finding title/category and expandable source ID. No browser or console errors occurred.
+- Refreshed the production screenshots and visual comparison package. `results.json` and `bonus_findings.json` hashes remain unchanged.

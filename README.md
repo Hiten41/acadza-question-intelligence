@@ -4,7 +4,7 @@
 
 > **Live production demo:** [https://acadza-question-intelligence.vercel.app](https://acadza-question-intelligence.vercel.app)
 
-> **Interface:** restrained, neutral dark review workspace with concise investigation headings and data-derived charts.
+> **Interface:** restrained, neutral dark review workspace with concise investigation headings, readable finding labels, and data-derived charts.
 
 > **Demonstration only:** decisions are pre-reviewed offline assignment data. The app does not call a live LLM, connect to Acadza production, publish corrections, or provide server-side audit guarantees. Faculty decisions persist in the current browser's local storage.
 
@@ -29,6 +29,8 @@ These screenshots were captured from the public production deployment. All views
 ### Proactive findings and audit
 
 ![Proactive findings](screenshots/deployed/proactive-findings.png)
+
+![R008/R007 readable finding detail](screenshots/deployed/proactive-finding-r008-r007.png)
 
 ![Approved and staged changes](screenshots/deployed/staged-changes.png)
 

@@ -666,6 +666,11 @@ code, kbd, .detail-id, .date-stamp, .audit-time, .report-heading time, .case-id 
 .redesign-shell .evidence-state p { margin: 3px 0 0; color: var(--text-muted); font-size: 11px; line-height: 1.45; }
 .redesign-shell .student-report { padding: 12px 0; border-color: var(--border); background: transparent; }
 .redesign-shell .student-report:last-child { border-bottom: 0; }
+.redesign-shell .detail-section-heading { display: flex; min-height: 0; align-items: center; gap: 9px; padding: 0 0 9px; border-bottom: 1px solid var(--border); }
+.redesign-shell .detail-section-heading h3 { margin: 0; color: var(--text-secondary); font-size: 11px; font-weight: 600; }
+.redesign-shell .detail-section-heading .proposal-status { margin-left: auto; }
+.redesign-shell .detail-section-heading .link-button { margin-left: auto; }
+.redesign-shell .detail-section-heading .count-badge { margin-left: 5px; }
 .redesign-shell .report-heading strong { color: var(--text-primary); font: 560 11px ui-monospace,Consolas,monospace; }
 .redesign-shell .report-heading time, .redesign-shell .source-chip { color: var(--text-muted); font-size: 10px; }
 .redesign-shell .student-report p { color: var(--text-secondary); font-size: 13px; line-height: 1.55; }

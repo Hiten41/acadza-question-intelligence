@@ -88,3 +88,10 @@ The application uses a pre-reviewed offline assignment baseline. It has no live 
 - Deployed to the existing Vercel project as `dpl_GMkT9TWaDke4CDLGWYjURGpesbTG` (Ready); the public alias returned HTTP 200.
 - All 27 tests passed. The production Chromium walkthrough passed 37 checks, including verification of the readable finding title/category and expandable source ID. No browser or console errors occurred.
 - Refreshed the production screenshots and visual comparison package. `results.json` and `bonus_findings.json` hashes remain unchanged.
+
+## 12 November 2026 — submission package check
+
+- Compared the release against the preserved assignment deliverables and four submission questions in `PROMPTS.md`. The repository includes the application, source data, 44 report-level results, bonus findings, tests, required documentation, production screenshots, public repository, and live deployment.
+- Verified that the trimmed 2:59 walkthrough is attached to the public GitHub release and its direct asset URL returns HTTP 200.
+- Replaced the obsolete recording instructions with the actual visible sequence and linked the released video. The email draft includes the video, repository, production URL, and confirmed answers; `[Your name]` remains for the user to fill in.
+- The application remains an offline demonstration using pre-reviewed adjudications, not a live LLM or Acadza production integration. No email was sent and no assignment was submitted.
